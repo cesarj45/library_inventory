@@ -9,8 +9,11 @@ export class Author {
   @Column()
   name: string;
 
-  @Column()
+  @Column({ nullable: true })  // Permite que 'bio' sea NULL en la base de datos
   bio: string;
+  
+  @Column()
+  birthDate: string;
 
   @OneToMany(() => Book, (book) => book.author, { cascade: true })
   books: Book[];
