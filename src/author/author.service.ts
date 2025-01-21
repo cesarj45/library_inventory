@@ -18,7 +18,7 @@ export class AuthorService {
   }
 
   async findAll(): Promise<Author[]> {
-    return await this.authorRepository.find({ relations: ['book'] }); // Incluye la relación con libros
+    return await this.authorRepository.find({ relations: ['books'] }); // Incluye la relación con libros
   }
 
   async findOne(id: number): Promise<Author> {

@@ -12,6 +12,6 @@ export class Book {
   @Column()
   genre: string;
 
-  @ManyToOne(() => Author, (author) => author.books, { onDelete: 'CASCADE' })
+  @ManyToOne(() => Author, (author) => author.books, { onDelete: 'CASCADE', eager: true })
   author: Author;
 }
